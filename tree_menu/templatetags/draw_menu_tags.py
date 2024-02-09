@@ -43,7 +43,8 @@ def draw_menu(context, menu_name):
     """
     request = context.get('request')
     current_path = request.path
-    menu_items = Menu.objects.filter(title=menu_name) or Menu.objects.all()
+    menu_items = list(Menu.objects.prefetch_related('items').filter(title=menu_name)
+                      or Menu.objects.prefetch_related('items').all())
     menu_html = draw_menu_recursive(menu_items, current_path)
 
     return menu_html
