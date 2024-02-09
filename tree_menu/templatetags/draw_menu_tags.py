@@ -15,21 +15,21 @@ def draw_menu_recursive(items, current_path):
             items = список объектов из базы данных.
             current_path = текущий url путь.
     """
-    result = ''
+    result = []
     for item in items:
         url = item.get_absolute_url()
         is_active = current_path.startswith(url)
 
-        result += f'<li>'
-        result += f'<a style="color: black" href="{url}">{item.title}</a>'
+        result.append(f'<li>')
+        result.append(f'<a style="color: black" href="{url}">{item.title}</a>')
 
         children = item.items.all()
         if children and is_active:
-            result += f'<ul>'
-            result += draw_menu_recursive(children, current_path)
-            result += '</ul>'
-        result += '</li>'
-    return mark_safe(result)
+            result.append(f'<ul>')
+            result.append(draw_menu_recursive(children, current_path))
+            result.append('</ul>')
+        result.append('</li>')
+    return mark_safe(''.join(result))
 
 
 @register.simple_tag(takes_context=True)
