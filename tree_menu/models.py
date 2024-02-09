@@ -62,4 +62,4 @@ class MenuItem(models.Model):
 
         if current_item.menu:
             base_menu_url = current_item.menu.get_absolute_url()
-            return f"{base_menu_url.rstrip('/')}/{('/'.join(url)).lstrip('/')}"
+            return f"{base_menu_url}{('/'.join(url))}"

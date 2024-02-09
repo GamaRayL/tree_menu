@@ -1,0 +1,100 @@
+[
+  {
+    "model": "tree_menu.Menu",
+    "pk": 1,
+    "fields": {
+      "title": "Каталог товаров",
+      "slug": "catalog"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 1,
+    "fields": {
+      "title": "Компьютерная техника",
+      "menu": 1,
+      "parent": null,
+      "slug": "computers"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 2,
+    "fields": {
+      "title": "Комплектующие",
+      "menu": null,
+      "parent": 1,
+      "slug": "accessories"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 3,
+    "fields": {
+      "title": "Процессоры",
+      "menu": null,
+      "parent": 2,
+      "slug": "cpu"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 4,
+    "fields": {
+      "title": "Материнские платы",
+      "menu": null,
+      "parent": 2,
+      "slug": "motherboard"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 5,
+    "fields": {
+      "title": "Видеокарты",
+      "menu": null,
+      "parent": 2,
+      "slug": "gpu"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 6,
+    "fields": {
+      "title": "Оперативная память",
+      "menu": null,
+      "parent": 2,
+      "slug": "system_memory"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 7,
+    "fields": {
+      "title": "Ноутбуки",
+      "menu": null,
+      "parent": 1,
+      "slug": "notebook"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 8,
+    "fields": {
+      "title": "Периферийные устройства",
+      "menu": null,
+      "parent": 1,
+      "slug": "periferiya"
+    }
+  },
+  {
+    "model": "tree_menu.Menuitem",
+    "pk": 9,
+    "fields": {
+      "title": "Телефоны и гаджеты",
+      "menu": 1,
+      "parent": null,
+      "slug": "portable"
+    }
+  }
+]

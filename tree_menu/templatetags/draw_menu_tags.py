@@ -21,7 +21,7 @@ def draw_menu_recursive(items, current_path):
         is_active = current_path.startswith(url)
 
         result += f'<li>'
-        result += f'<a class="link-dark" href="{url}">{item.title}</a>'
+        result += f'<a style="color: black" href="{url}">{item.title}</a>'
 
         children = item.items.all()
         if children and is_active:
@@ -39,11 +39,11 @@ def draw_menu(context, menu_name):
 
         Параметры:
             context = контекст текущей страницы.
-            menu_name = заголовок меню из базы данных.
+            menu_name = заголовок меню из базы данных (если не совпадает, то выведет все меню).
     """
     request = context.get('request')
     current_path = request.path
-    menu_items = Menu.objects.filter(title=menu_name)
+    menu_items = Menu.objects.filter(title=menu_name) or Menu.objects.all()
     menu_html = draw_menu_recursive(menu_items, current_path)
 
     return menu_html
